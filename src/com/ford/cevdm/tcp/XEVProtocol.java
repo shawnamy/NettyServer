@@ -1,7 +1,5 @@
 package com.ford.cevdm.tcp;
 
-import java.util.Arrays;
-
 /**
  * <pre>
  * 自己定义的协议
@@ -118,8 +116,9 @@ public class XEVProtocol {
 
 	@Override
 	public String toString() {
-		return "SmartCarProtocol [head_data=" + head_data + ", cmd=" + cmd + ", res=" + res + ", unique_id=" + unique_id
-				+ ", encry_type=" + encry_type + ", contentLength=" + contentLength + ", content="
-				+ Arrays.toString(content) + ", bcc=" + bcc + "]";
+		return "SmartCarProtocol [head_data=" + Util.dec2Hex(head_data, 2) + ", cmd=" + Util.dec2Hex(cmd, 1) + ", res="
+				+ Util.dec2Hex(res, 1) + ", unique_id=" + unique_id + ", encry_type=" + Util.dec2Hex(encry_type, 1)
+				+ ", contentLength=" + Util.dec2Hex(contentLength, 2) + ", content=" + Util.byteArr2HexStr(content)
+				+ ", bcc=" + Util.dec2Hex(bcc, 1) + "]";
 	}
 }
